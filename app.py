@@ -13,3 +13,6 @@ def gennames():
     namelist = ngenerator.main()
     return render_template('home.html', gen=True, namelist=namelist)
 
+@app.route("/info")
+def info():
+    return render_template('info.html')
