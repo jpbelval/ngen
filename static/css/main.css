@@ -1,0 +1,23 @@
+html *{
+    font-family: Ubuntu !important;
+}
+nav {
+   background-color: #222f3e;
+   
+}
+a{
+    color: #10ac84;
+}
+a:hover{
+    color: #085c47;
+}
+nav ul a{
+    font-size: 20px;
+}
+.container{
+    justify-content: center;
+    padding-top: 50px;
+}
+form .submit{
+    padding-top: 10px;
+}

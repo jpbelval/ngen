@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form action="{{ url_for('gennames') }}" method="post">
+                <div class="form-group">
+                    <label for="nametype">Select a race or origin</label>
+                    <select name="nametype" class="form-control form-control-lg">
+                        <option>Khajiit</option>
+                    </select>
+                    <div class="submit">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </div> 
+            </form>
+        </div>
+    </div>
+    {% if gen %}
+    <div class="row">
+        <div class="container" style="flex-wrap: wrap;">
+            {% for e in namelist %}
+            <div style="display: inline-block;">
+                <p style="margin: 60px;">{{ e }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
