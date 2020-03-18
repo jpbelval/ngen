@@ -10,7 +10,7 @@ def home():
 @app.route("/gen", methods=["POST"])
 def gennames():
     race = request.form.get("nametype")
-    namelist = ngenerator.main()
+    namelist = ngenerator.main(race)
     return render_template('home.html', gen=True, namelist=namelist)
 
 @app.route("/info")

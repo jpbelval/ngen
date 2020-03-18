@@ -6,8 +6,17 @@
             <form action="{{ url_for('gennames') }}" method="post">
                 <div class="form-group">
                     <label for="nametype">Select a race or origin</label>
-                    <select name="nametype" class="form-control form-control-lg">
+                    <select id="pick" name="nametype" class="form-control form-control-lg">
+                        <option>Argonian</option>
                         <option>Khajiit</option>
+                        <option>Altmer</option>
+                        <option>Bosmer</option>
+                        <option>Breton</option>
+                        <option>Dunmer</option>
+                        <option>Imperial</option>
+                        <option>Nord</option>
+                        <option>Orc</option>
+                        <option>Redguard</option>
                     </select>
                     <div class="submit">
                         <button type="submit" class="btn" style="background-color: #10ac84; color: white;">Generate</button>
@@ -28,4 +37,13 @@
     </div>
     {% endif %}
 </div>
+<script>
+    document.getElementById('pick').onchange = function() {
+      localStorage.setItem('selectedtem', document.getElementById('pick').selectedIndex);
+    };
+
+    if (localStorage.getItem('selectedtem')) {
+      document.getElementById('pick').options[localStorage.getItem('selectedtem')].selected = true;
+    }
+</script>
 {% endblock %}
